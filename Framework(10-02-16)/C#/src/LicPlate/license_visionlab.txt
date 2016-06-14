@@ -1,0 +1,8 @@
+VisionLab demo license file 
+Version         : 345
+Expiration date : 05 September 2016
+Customer        : NHL250days
+Copyright (c) 1993-2012 Van de Loosdrecht Machine Vision BV, All rights reserved
+www.vdlmv.nl, support@vdlmv.nl
+Do NOT modify this file
+1f 8 10 1 6 1e d 17 5e 50 54 5c 59 57 51 42 5d 52 57 5d 51 56 57 42 58 54 52 5f 58 5f 48 43 5f 58 54 52 45 5d 51 4e 5d 51 50 50 5d 59 53 45 58 53 56 5a 5e 58 54 42 5f 52 51 5a 58 5a 52 45 5d 52 53 58 5c 57 54 40 55 50 52 5c 5f 5f 55 41 5d 55 53 59 51 5b 52 40 5e 56 5a 5d 58 56 5c 44 5a 58 56 5c 5a 5f 4a 41 5b 55 56 5d 58 5d 57 43 5d 51 51 5b 59 5a 5c 4e 58 55 57 5f 5f 5a 50 40 59 59 56 5d 5d 59 53 42 3f 2e 3b 18 a 1b 6 1b 5 e c 1b d 1a 4 15 55 54 43 5a 5a 5d 51 47 

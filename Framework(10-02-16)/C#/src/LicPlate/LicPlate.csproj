@@ -1,0 +1,555 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B06E7E02-EE14-4FFC-AF4A-C74DD29EF783}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LicPlate</RootNamespace>
+    <AssemblyName>LicPlate</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetZone>LocalIntranet</TargetZone>
+    <GenerateManifests>true</GenerateManifests>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LicensePlateMatcherScript.cs" />
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LicensePlate.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="LicensePlateMatcher.cs" />
+    <Compile Include="swig\ActivationFunction.cs" />
+    <Compile Include="swig\AxisMapping.cs" />
+    <Compile Include="swig\AxisType.cs" />
+    <Compile Include="swig\BarCodeCheck.cs" />
+    <Compile Include="swig\BarCodeRes.cs" />
+    <Compile Include="swig\BarCodeScanDir.cs" />
+    <Compile Include="swig\BarCodeType.cs" />
+    <Compile Include="swig\BiasNodes.cs" />
+    <Compile Include="swig\BinningMode.cs" />
+    <Compile Include="swig\Blob.cs" />
+    <Compile Include="swig\BlobAnalyse.cs" />
+    <Compile Include="swig\BlobAnalyseModifier.cs" />
+    <Compile Include="swig\BlobDownCompare.cs" />
+    <Compile Include="swig\BlobMatcher_Byte.cs" />
+    <Compile Include="swig\BlobMatcher_Int16.cs" />
+    <Compile Include="swig\BlobMatcher_Int32.cs" />
+    <Compile Include="swig\BlobMatcher_Int8.cs" />
+    <Compile Include="swig\BlobUpCompare.cs" />
+    <Compile Include="swig\Border.cs" />
+    <Compile Include="swig\BPN.cs" />
+    <Compile Include="swig\BPN_Classifier.cs" />
+    <Compile Include="swig\BPN_FeatureOptimizer_Byte.cs" />
+    <Compile Include="swig\BPN_FeatureOptimizer_Double.cs" />
+    <Compile Include="swig\BPN_FeatureOptimizer_Float.cs" />
+    <Compile Include="swig\BPN_FeatureOptimizer_HSV16.cs" />
+    <Compile Include="swig\BPN_FeatureOptimizer_HSV8.cs" />
+    <Compile Include="swig\BPN_FeatureOptimizer_Int16.cs" />
+    <Compile Include="swig\BPN_FeatureOptimizer_Int32.cs" />
+    <Compile Include="swig\BPN_FeatureOptimizer_Int8.cs" />
+    <Compile Include="swig\BPN_FeatureOptimizer_RGB16.cs" />
+    <Compile Include="swig\BPN_FeatureOptimizer_RGB8.cs" />
+    <Compile Include="swig\BPN_FeatureOptimizer_YUV16.cs" />
+    <Compile Include="swig\BPN_FeatureOptimizer_YUV8.cs" />
+    <Compile Include="swig\BPN_ImageClassifier_Byte.cs" />
+    <Compile Include="swig\BPN_ImageClassifier_Double.cs" />
+    <Compile Include="swig\BPN_ImageClassifier_Float.cs" />
+    <Compile Include="swig\BPN_ImageClassifier_HSV16.cs" />
+    <Compile Include="swig\BPN_ImageClassifier_HSV8.cs" />
+    <Compile Include="swig\BPN_ImageClassifier_Int16.cs" />
+    <Compile Include="swig\BPN_ImageClassifier_Int32.cs" />
+    <Compile Include="swig\BPN_ImageClassifier_Int8.cs" />
+    <Compile Include="swig\BPN_ImageClassifier_RGB16.cs" />
+    <Compile Include="swig\BPN_ImageClassifier_RGB8.cs" />
+    <Compile Include="swig\BPN_ImageClassifier_YUV16.cs" />
+    <Compile Include="swig\BPN_ImageClassifier_YUV8.cs" />
+    <Compile Include="swig\BPN_ImageOptimizer_Byte.cs" />
+    <Compile Include="swig\BPN_ImageOptimizer_Double.cs" />
+    <Compile Include="swig\BPN_ImageOptimizer_Float.cs" />
+    <Compile Include="swig\BPN_ImageOptimizer_HSV16.cs" />
+    <Compile Include="swig\BPN_ImageOptimizer_HSV8.cs" />
+    <Compile Include="swig\BPN_ImageOptimizer_Int16.cs" />
+    <Compile Include="swig\BPN_ImageOptimizer_Int32.cs" />
+    <Compile Include="swig\BPN_ImageOptimizer_Int8.cs" />
+    <Compile Include="swig\BPN_ImageOptimizer_RGB16.cs" />
+    <Compile Include="swig\BPN_ImageOptimizer_RGB8.cs" />
+    <Compile Include="swig\BPN_ImageOptimizer_YUV16.cs" />
+    <Compile Include="swig\BPN_ImageOptimizer_YUV8.cs" />
+    <Compile Include="swig\ByteImage.cs" />
+    <Compile Include="swig\CamCalibGA.cs" />
+    <Compile Include="swig\CamCalibration.cs" />
+    <Compile Include="swig\CamCalLowHigh.cs" />
+    <Compile Include="swig\CameraBase.cs" />
+    <Compile Include="swig\Camera_Byte.cs" />
+    <Compile Include="swig\Camera_Double.cs" />
+    <Compile Include="swig\Camera_Float.cs" />
+    <Compile Include="swig\Camera_HSV8.cs" />
+    <Compile Include="swig\Camera_Int16.cs" />
+    <Compile Include="swig\Camera_Int32.cs" />
+    <Compile Include="swig\Camera_Int8.cs" />
+    <Compile Include="swig\Camera_RGB8.cs" />
+    <Compile Include="swig\Camera_YUV8.cs" />
+    <Compile Include="swig\CamInstallCmd.cs" />
+    <Compile Include="swig\CamParamType.cs" />
+    <Compile Include="swig\CamROI.cs" />
+    <Compile Include="swig\CFAType.cs" />
+    <Compile Include="swig\ChainCode.cs" />
+    <Compile Include="swig\ChainCode4Dir.cs" />
+    <Compile Include="swig\ChainCode8Dir.cs" />
+    <Compile Include="swig\ChainCodeType.cs" />
+    <Compile Include="swig\CircleBrightness.cs" />
+    <Compile Include="swig\ClassFeatureSet_Byte.cs" />
+    <Compile Include="swig\ClassFeatureSet_Double.cs" />
+    <Compile Include="swig\ClassFeatureSet_Float.cs" />
+    <Compile Include="swig\ClassFeatureSet_HSV16.cs" />
+    <Compile Include="swig\ClassFeatureSet_HSV8.cs" />
+    <Compile Include="swig\ClassFeatureSet_Int16.cs" />
+    <Compile Include="swig\ClassFeatureSet_Int32.cs" />
+    <Compile Include="swig\ClassFeatureSet_Int8.cs" />
+    <Compile Include="swig\ClassFeatureSet_RGB16.cs" />
+    <Compile Include="swig\ClassFeatureSet_RGB8.cs" />
+    <Compile Include="swig\ClassFeatureSet_YUV16.cs" />
+    <Compile Include="swig\ClassFeatureSet_YUV8.cs" />
+    <Compile Include="swig\ClassImageSet_Byte.cs" />
+    <Compile Include="swig\ClassImageSet_Double.cs" />
+    <Compile Include="swig\ClassImageSet_Float.cs" />
+    <Compile Include="swig\ClassImageSet_HSV16.cs" />
+    <Compile Include="swig\ClassImageSet_HSV8.cs" />
+    <Compile Include="swig\ClassImageSet_Int16.cs" />
+    <Compile Include="swig\ClassImageSet_Int32.cs" />
+    <Compile Include="swig\ClassImageSet_Int8.cs" />
+    <Compile Include="swig\ClassImageSet_RGB16.cs" />
+    <Compile Include="swig\ClassImageSet_RGB8.cs" />
+    <Compile Include="swig\ClassImageSet_YUV16.cs" />
+    <Compile Include="swig\ClassImageSet_YUV8.cs" />
+    <Compile Include="swig\ClassLexicon.cs" />
+    <Compile Include="swig\ClassOutput.cs" />
+    <Compile Include="swig\CmdIntCallBackCmd.cs" />
+    <Compile Include="swig\CmdIntCommand.cs" />
+    <Compile Include="swig\CmdInterpreter.cs" />
+    <Compile Include="swig\Color161616Pixel.cs" />
+    <Compile Include="swig\Color888Pixel.cs" />
+    <Compile Include="swig\ComplexDoubleImage.cs" />
+    <Compile Include="swig\ComplexFloatImage.cs" />
+    <Compile Include="swig\Connected.cs" />
+    <Compile Include="swig\ConvComplex.cs" />
+    <Compile Include="swig\Coord2D.cs" />
+    <Compile Include="swig\Coord3D.cs" />
+    <Compile Include="swig\CoordConversion.cs" />
+    <Compile Include="swig\DefaultCallBackCmd.cs" />
+    <Compile Include="swig\DoubleImage.cs" />
+    <Compile Include="swig\EchoMode.cs" />
+    <Compile Include="swig\EDTMask.cs" />
+    <Compile Include="swig\EDTScale.cs" />
+    <Compile Include="swig\Error.cs" />
+    <Compile Include="swig\Error_GA.cs" />
+    <Compile Include="swig\Error_VL.cs" />
+    <Compile Include="swig\FitnessAllCmd.cs" />
+    <Compile Include="swig\FitnessCmd.cs" />
+    <Compile Include="swig\FixEdge.cs" />
+    <Compile Include="swig\FloatImage.cs" />
+    <Compile Include="swig\FPParamDesc.cs" />
+    <Compile Include="swig\GenAlgFP.cs" />
+    <Compile Include="swig\Gradient.cs" />
+    <Compile Include="swig\HeightWidth.cs" />
+    <Compile Include="swig\Histogram.cs" />
+    <Compile Include="swig\HistogramType.cs" />
+    <Compile Include="swig\HLParams.cs" />
+    <Compile Include="swig\HoughCircle.cs" />
+    <Compile Include="swig\HoughLine.cs" />
+    <Compile Include="swig\HSV161616Image.cs" />
+    <Compile Include="swig\HSV161616Pixel.cs" />
+    <Compile Include="swig\HSV888Image.cs" />
+    <Compile Include="swig\HSV888Pixel.cs" />
+    <Compile Include="swig\HSVColor.cs" />
+    <Compile Include="swig\Image.cs" />
+    <Compile Include="swig\ImageCreator.cs" />
+    <Compile Include="swig\Int16Image.cs" />
+    <Compile Include="swig\Int32Image.cs" />
+    <Compile Include="swig\Int8Image.cs" />
+    <Compile Include="swig\IOType.cs" />
+    <Compile Include="swig\Layer.cs" />
+    <Compile Include="swig\LetterMatch.cs" />
+    <Compile Include="swig\Line2D.cs" />
+    <Compile Include="swig\Line3D.cs" />
+    <Compile Include="swig\LineXY.cs" />
+    <Compile Include="swig\LogMode.cs" />
+    <Compile Include="swig\MaskBase.cs" />
+    <Compile Include="swig\Mask_Byte.cs" />
+    <Compile Include="swig\Mask_ComplexDouble.cs" />
+    <Compile Include="swig\Mask_ComplexFloat.cs" />
+    <Compile Include="swig\Mask_Double.cs" />
+    <Compile Include="swig\Mask_Float.cs" />
+    <Compile Include="swig\Mask_HSV16.cs" />
+    <Compile Include="swig\Mask_HSV8.cs" />
+    <Compile Include="swig\Mask_Int16.cs" />
+    <Compile Include="swig\Mask_Int32.cs" />
+    <Compile Include="swig\Mask_Int8.cs" />
+    <Compile Include="swig\Mask_RGB16.cs" />
+    <Compile Include="swig\Mask_RGB8.cs" />
+    <Compile Include="swig\Mask_YUV16.cs" />
+    <Compile Include="swig\Mask_YUV8.cs" />
+    <Compile Include="swig\MCPCalib.cs" />
+    <Compile Include="swig\MCPCalibTabElm.cs" />
+    <Compile Include="swig\MCPCommand.cs" />
+    <Compile Include="swig\MFCam.cs" />
+    <Compile Include="swig\MF_MirrorMode.cs" />
+    <Compile Include="swig\MinMaxInput.cs" />
+    <Compile Include="swig\MirrorOperation.cs" />
+    <Compile Include="swig\NumByteImage.cs" />
+    <Compile Include="swig\NumComplexDoubleImage.cs" />
+    <Compile Include="swig\NumComplexFloatImage.cs" />
+    <Compile Include="swig\NumDoubleImage.cs" />
+    <Compile Include="swig\NumFloatImage.cs" />
+    <Compile Include="swig\NumHSV161616Image.cs" />
+    <Compile Include="swig\NumHSV888Image.cs" />
+    <Compile Include="swig\NumInt16Image.cs" />
+    <Compile Include="swig\NumInt32Image.cs" />
+    <Compile Include="swig\NumInt8Pixel.cs" />
+    <Compile Include="swig\NumRGB161616Image.cs" />
+    <Compile Include="swig\NumRGB888Image.cs" />
+    <Compile Include="swig\NumYUV161616Image.cs" />
+    <Compile Include="swig\NumYUV888Image.cs" />
+    <Compile Include="swig\ObjectBrightness.cs" />
+    <Compile Include="swig\OpCode.cs" />
+    <Compile Include="swig\Optimize.cs" />
+    <Compile Include="swig\OrdByteImage.cs" />
+    <Compile Include="swig\OrdDoubleImage.cs" />
+    <Compile Include="swig\OrdFloatImage.cs" />
+    <Compile Include="swig\OrdInt16Image.cs" />
+    <Compile Include="swig\OrdInt32Image.cs" />
+    <Compile Include="swig\OrdInt8Pixel.cs" />
+    <Compile Include="swig\Orientation.cs" />
+    <Compile Include="swig\ParamsError.cs" />
+    <Compile Include="swig\PatternEvalResult.cs" />
+    <Compile Include="swig\PatternMatcher_Byte.cs" />
+    <Compile Include="swig\PatternMatcher_Int16.cs" />
+    <Compile Include="swig\PatternMatcher_Int32.cs" />
+    <Compile Include="swig\PatternMatcher_Int8.cs" />
+    <Compile Include="swig\PatternMatchResult.cs" />
+    <Compile Include="swig\PixelInterpolation.cs" />
+    <Compile Include="swig\PolarCoord.cs" />
+    <Compile Include="swig\RGB161616Image.cs" />
+    <Compile Include="swig\RGB161616Pixel.cs" />
+    <Compile Include="swig\RGB888Image.cs" />
+    <Compile Include="swig\RGB888Pixel.cs" />
+    <Compile Include="swig\RGBColor.cs" />
+    <Compile Include="swig\SortOrder.cs" />
+    <Compile Include="swig\SWIGTYPE_p_char.cs" />
+    <Compile Include="swig\SWIGTYPE_p_CmdInterpreter__Command.cs" />
+    <Compile Include="swig\SWIGTYPE_p_DisplayLUT.cs" />
+    <Compile Include="swig\SWIGTYPE_p_double.cs" />
+    <Compile Include="swig\SWIGTYPE_p_float.cs" />
+    <Compile Include="swig\SWIGTYPE_p_f_r_std__istream_r_std__ostream_r_JL_VisionLib_V3__VisLibCmdInt__void.cs" />
+    <Compile Include="swig\SWIGTYPE_p_f_r_std__istream_r_std__ostream__p_JL_VisionLib_V3__CameraBase.cs" />
+    <Compile Include="swig\SWIGTYPE_p_f_void__bool.cs" />
+    <Compile Include="swig\SWIGTYPE_p_GUID.cs" />
+    <Compile Include="swig\SWIGTYPE_p_HRESULT.cs" />
+    <Compile Include="swig\SWIGTYPE_p_IMFMediaSource.cs" />
+    <Compile Include="swig\SWIGTYPE_p_int.cs" />
+    <Compile Include="swig\SWIGTYPE_p_istream.cs" />
+    <Compile Include="swig\SWIGTYPE_p_JL_VisionLib_V3__CameraT_JL_VisionLib_V3__ColorImageT_JL_VisionLib_V3__RGB888Pixel_t_t.cs" />
+    <Compile Include="swig\SWIGTYPE_p_LPCWSTR.cs" />
+    <Compile Include="swig\SWIGTYPE_p_ostream.cs" />
+    <Compile Include="swig\SWIGTYPE_p_p_IMFActivate.cs" />
+    <Compile Include="swig\SWIGTYPE_p_QString.cs" />
+    <Compile Include="swig\SWIGTYPE_p_short.cs" />
+    <Compile Include="swig\SWIGTYPE_p_std__complexT_double_t.cs" />
+    <Compile Include="swig\SWIGTYPE_p_std__complexT_float_t.cs" />
+    <Compile Include="swig\SWIGTYPE_p_std__istream.cs" />
+    <Compile Include="swig\SWIGTYPE_p_std__mapT_std__string_int_t.cs" />
+    <Compile Include="swig\SWIGTYPE_p_std__ostream.cs" />
+    <Compile Include="swig\SWIGTYPE_p_std__setT_char_t.cs" />
+    <Compile Include="swig\SWIGTYPE_p_std__setT_double_t.cs" />
+    <Compile Include="swig\SWIGTYPE_p_std__setT_float_t.cs" />
+    <Compile Include="swig\SWIGTYPE_p_std__setT_int_t.cs" />
+    <Compile Include="swig\SWIGTYPE_p_std__setT_JL_VisionLib_V3__BlobAnalyse_t.cs" />
+    <Compile Include="swig\SWIGTYPE_p_std__setT_short_t.cs" />
+    <Compile Include="swig\SWIGTYPE_p_std__setT_unsigned_char_t.cs" />
+    <Compile Include="swig\SWIGTYPE_p_std__string.cs" />
+    <Compile Include="swig\SWIGTYPE_p_std__vectorT_char_p_t.cs" />
+    <Compile Include="swig\SWIGTYPE_p_std__vectorT_double_p_t.cs" />
+    <Compile Include="swig\SWIGTYPE_p_std__vectorT_float_p_t.cs" />
+    <Compile Include="swig\SWIGTYPE_p_std__vectorT_int_p_t.cs" />
+    <Compile Include="swig\SWIGTYPE_p_std__vectorT_JL_VisionLib_V3__HSV161616Pixel_p_t.cs" />
+    <Compile Include="swig\SWIGTYPE_p_std__vectorT_JL_VisionLib_V3__HSV888Pixel_p_t.cs" />
+    <Compile Include="swig\SWIGTYPE_p_std__vectorT_JL_VisionLib_V3__Image_p_t.cs" />
+    <Compile Include="swig\SWIGTYPE_p_std__vectorT_JL_VisionLib_V3__RGB161616Pixel_p_t.cs" />
+    <Compile Include="swig\SWIGTYPE_p_std__vectorT_JL_VisionLib_V3__RGB888Pixel_p_t.cs" />
+    <Compile Include="swig\SWIGTYPE_p_std__vectorT_JL_VisionLib_V3__YUV161616Pixel_p_t.cs" />
+    <Compile Include="swig\SWIGTYPE_p_std__vectorT_JL_VisionLib_V3__YUV888Pixel_p_t.cs" />
+    <Compile Include="swig\SWIGTYPE_p_std__vectorT_short_p_t.cs" />
+    <Compile Include="swig\SWIGTYPE_p_std__vectorT_std__complexT_double_t_p_t.cs" />
+    <Compile Include="swig\SWIGTYPE_p_std__vectorT_std__complexT_float_t_p_t.cs" />
+    <Compile Include="swig\SWIGTYPE_p_std__vectorT_unsigned_char_p_t.cs" />
+    <Compile Include="swig\SWIGTYPE_p_std__vectorT_unsigned_int_t.cs" />
+    <Compile Include="swig\SWIGTYPE_p_string.cs" />
+    <Compile Include="swig\SWIGTYPE_p_unsigned_char.cs" />
+    <Compile Include="swig\SWIGTYPE_p_unsigned_long_long.cs" />
+    <Compile Include="swig\TransformDirection.cs" />
+    <Compile Include="swig\UseXOrY.cs" />
+    <Compile Include="swig\vector_Blob.cs" />
+    <Compile Include="swig\vector_BlobAnalyse.cs" />
+    <Compile Include="swig\vector_bool.cs" />
+    <Compile Include="swig\vector_ByteImage.cs" />
+    <Compile Include="swig\vector_CamCalLowHigh.cs" />
+    <Compile Include="swig\vector_CamROI.cs" />
+    <Compile Include="swig\vector_char.cs" />
+    <Compile Include="swig\vector_ClassOutput.cs" />
+    <Compile Include="swig\vector_ComplexDoubleImage.cs" />
+    <Compile Include="swig\vector_ComplexFloatImage.cs" />
+    <Compile Include="swig\vector_Coord2D.cs" />
+    <Compile Include="swig\vector_Coord3D.cs" />
+    <Compile Include="swig\vector_double.cs" />
+    <Compile Include="swig\vector_DoubleImage.cs" />
+    <Compile Include="swig\vector_float.cs" />
+    <Compile Include="swig\vector_FloatImage.cs" />
+    <Compile Include="swig\vector_FPParamDesc.cs" />
+    <Compile Include="swig\vector_HoughCircle.cs" />
+    <Compile Include="swig\vector_HoughLine.cs" />
+    <Compile Include="swig\vector_HSV161616Image.cs" />
+    <Compile Include="swig\vector_HSV161616Pixel.cs" />
+    <Compile Include="swig\vector_HSV888Image.cs" />
+    <Compile Include="swig\vector_HSV888Pixel.cs" />
+    <Compile Include="swig\vector_int.cs" />
+    <Compile Include="swig\vector_Int16Image.cs" />
+    <Compile Include="swig\vector_Int32Image.cs" />
+    <Compile Include="swig\vector_Int8Image.cs" />
+    <Compile Include="swig\vector_Layer.cs" />
+    <Compile Include="swig\vector_LetterMatch.cs" />
+    <Compile Include="swig\vector_LineXY.cs" />
+    <Compile Include="swig\vector_long_long.cs" />
+    <Compile Include="swig\vector_MCPCalibTabElm.cs" />
+    <Compile Include="swig\vector_MinMaxInput.cs" />
+    <Compile Include="swig\vector_NumByteImage.cs" />
+    <Compile Include="swig\vector_NumComplexDoubleImage.cs" />
+    <Compile Include="swig\vector_NumComplexFloatImage.cs" />
+    <Compile Include="swig\vector_NumDoubleImage.cs" />
+    <Compile Include="swig\vector_NumFloatImage.cs" />
+    <Compile Include="swig\vector_NumHSV161616Image.cs" />
+    <Compile Include="swig\vector_NumHSV888Image.cs" />
+    <Compile Include="swig\vector_NumInt16Image.cs" />
+    <Compile Include="swig\vector_NumInt32Image.cs" />
+    <Compile Include="swig\vector_NumInt8Image.cs" />
+    <Compile Include="swig\vector_NumRGB161616Image.cs" />
+    <Compile Include="swig\vector_NumRGB888Image.cs" />
+    <Compile Include="swig\vector_NumYUV161616Image.cs" />
+    <Compile Include="swig\vector_NumYUV888Image.cs" />
+    <Compile Include="swig\vector_OrdByteImage.cs" />
+    <Compile Include="swig\vector_OrdDoubleImage.cs" />
+    <Compile Include="swig\vector_OrdFloatImage.cs" />
+    <Compile Include="swig\vector_OrdInt16Image.cs" />
+    <Compile Include="swig\vector_OrdInt32Image.cs" />
+    <Compile Include="swig\vector_OrdInt8Image.cs" />
+    <Compile Include="swig\vector_ParamsError.cs" />
+    <Compile Include="swig\vector_PatternEvalResult.cs" />
+    <Compile Include="swig\vector_PatternMatchResult.cs" />
+    <Compile Include="swig\vector_PolarCoord.cs" />
+    <Compile Include="swig\vector_RGB161616Image.cs" />
+    <Compile Include="swig\vector_RGB161616Pixel.cs" />
+    <Compile Include="swig\vector_RGB888Image.cs" />
+    <Compile Include="swig\vector_RGB888Pixel.cs" />
+    <Compile Include="swig\vector_short.cs" />
+    <Compile Include="swig\vector_string.cs" />
+    <Compile Include="swig\vector_uchar.cs" />
+    <Compile Include="swig\vector_ulong_long.cs" />
+    <Compile Include="swig\vector_vector_ByteImage.cs" />
+    <Compile Include="swig\vector_vector_ComplexDoubleImage.cs" />
+    <Compile Include="swig\vector_vector_ComplexFloatImage.cs" />
+    <Compile Include="swig\vector_vector_double.cs" />
+    <Compile Include="swig\vector_vector_DoubleImage.cs" />
+    <Compile Include="swig\vector_vector_FloatImage.cs" />
+    <Compile Include="swig\vector_vector_HSV161616Image.cs" />
+    <Compile Include="swig\vector_vector_HSV888Image.cs" />
+    <Compile Include="swig\vector_vector_int.cs" />
+    <Compile Include="swig\vector_vector_Int16Image.cs" />
+    <Compile Include="swig\vector_vector_Int32Image.cs" />
+    <Compile Include="swig\vector_vector_Int8Image.cs" />
+    <Compile Include="swig\vector_vector_LetterMatch.cs" />
+    <Compile Include="swig\vector_vector_RGB161616Image.cs" />
+    <Compile Include="swig\vector_vector_RGB888Image.cs" />
+    <Compile Include="swig\vector_vector_vector_double.cs" />
+    <Compile Include="swig\vector_vector_YUV161616Image.cs" />
+    <Compile Include="swig\vector_vector_YUV888Image.cs" />
+    <Compile Include="swig\vector_XYCoord.cs" />
+    <Compile Include="swig\vector_YUV161616Image.cs" />
+    <Compile Include="swig\vector_YUV161616Pixel.cs" />
+    <Compile Include="swig\vector_YUV888Image.cs" />
+    <Compile Include="swig\vector_YUV888Pixel.cs" />
+    <Compile Include="swig\ViewPoint.cs" />
+    <Compile Include="swig\VisionLab.cs" />
+    <Compile Include="swig\VisionLabPINVOKE.cs" />
+    <Compile Include="swig\VisLibCmdInt.cs" />
+    <Compile Include="swig\XYCoord.cs" />
+    <Compile Include="swig\YUV161616Image.cs" />
+    <Compile Include="swig\YUV161616Pixel.cs" />
+    <Compile Include="swig\YUV888Image.cs" />
+    <Compile Include="swig\YUV888Pixel.cs" />
+    <Compile Include="swig\YUVColor.cs" />
+    <Compile Include="swig\ZeroOrOriginal.cs" />
+    <Compile Include="VisionLabEx.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="license_visionlab.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

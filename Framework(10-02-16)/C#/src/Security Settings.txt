@@ -1,0 +1,9 @@
+Error message:
+  "Cannot read manifest file Config.manifest"
+
+- On student and own pc's:
+  Enable ClickOnce Security Setting
+  This is a full trust application
+
+- On presentation PC's
+  Disable ClickOnce Security Setting

@@ -1,0 +1,43 @@
+// find_plate.jls    
+// Find largest license plate in image
+// July 2012
+// Jaap van de Loosdrecht and Klaas Dijkstra
+// Input: %currentimage: Original image 
+// Output: Binary image containing the plate as the biggest blob 
+// Result: true if license plate is found otherwise false
+
+$ServerScript = IsServerScript
+if $ServerScript === false
+  //Copy script selected image (F6)
+  copy %currentimage OriginalImage
+else
+  //Copy first image passed by C#
+  copy %p1 OriginalImage
+endif
+
+//Convert from RGB888Image to HSV888Image
+FastRGBToHSV OriginalImage OriginalImage
+//***********************************//
+//*** Exercise: Find license plate **//
+//***********************************//
+
+//Threshold HSV
+ThresholdHSVchannels OriginalImage LicensePlateBin Int32Image 21 50 100 255 100 255
+//Remove small blobs
+RemoveBlobs LicensePlateBin EightConnected Area 1 5000 UseX
+//Fill up characters
+FillHoles LicensePlateBin FourConnected
+
+if $ServerScript === false
+  display LicensePlateBin
+else
+  //Copy result image back to C#
+  copy LicensePlateBin %p2
+endif
+
+$sum = SumIntPixels LicensePlateBin
+if $sum > 0 then
+  return true
+else
+  return false
+endif

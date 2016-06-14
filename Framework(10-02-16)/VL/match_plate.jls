@@ -1,0 +1,56 @@
+// match_plate.jls
+// Match the licenseplate
+// September 2011
+// Jaap van de Loosdrecht and Klaas Dijkstra
+// %thirdimage: Rectified binary image containing the text of the plate
+// Result: License plate characters including the confidences: <LexiconResult> <LexiconConfidence> <character1> <confidence1> <character2> <confidence2> etc ..
+
+$ServerScript = IsServerScript
+if $ServerScript === false
+  //Copy third selected image (Operator->Select 3rd)
+  copy %thirdimage LicensePlateRectifiedBin
+  $lpwd = lpwd
+  cwd $lpwd
+  PM_ReadFromFile PatternMatcher ../VL/lic_fonts.pm  //Read pattern matcher file
+else
+  copy %p1 LicensePlateRectifiedBin
+endif
+
+//Analyse blobs locations
+copy LicensePlateRectifiedBin LicensePlateRectifiedLabel
+labelblobs LicensePlateRectifiedLabel EightConnected
+$maxBlobIndex = BlobAnalysisArray LicensePlateRectifiedLabel &$tab SortDown TopLeft UseX Height TopLeft Width
+if $maxBlobIndex !== 5 then //Check if 5 characters were found
+  return false
+endif
+
+//Begin matching in a for loop
+SetSizeArray &$errors 0
+$matches = ""
+$confidence = 1000
+for $i = 0 to $maxBlobIndex do
+  VarToArray &$tab[$i] &$elm
+  $label = $elm[0]
+  $h = $elm[1]
+  $tl = $elm[2]
+  $w = $elm[3]
+  $x = getnthfromvector 1 $tl
+  $y = getnthfromvector 2 $tl
+  ROI LicensePlateRectifiedBin LicensePlateRectifiedBinROI $x $y $h $w
+  $bestMatch = PM_BestMatch LicensePlateRectifiedBinROI PatternMatcher -0.5 0.5 //Match 
+  $patternId = GetNthWord 1 $bestMatch  //Get pattern ID
+  $conf = GetNthWord 2 $bestMatch //Get confidence
+  $error = GetNthWord 3 $bestMatch //Get error
+  $patternName = PM_PatternName PatternMatcher $patternId //Convert pattern ID to confidence
+  
+  if $conf < $confidence
+    $confidence = $conf
+  endif
+  $errors[$i] = $error
+  $matches = $matches . $patternName
+endfor  
+
+//Return results
+ArrayToVar &$errors &$errors
+$result = concat $matches $confidence $errors
+return $result
