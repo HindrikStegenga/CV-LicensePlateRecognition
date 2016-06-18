@@ -18,6 +18,8 @@ endif
 
 //Analyse blobs locations
 copy LicensePlateRectifiedBin LicensePlateRectifiedLabel
+RemoveborderBlobs LicensePlateRectifiedLabel EightConnected AllBorders
+
 labelblobs LicensePlateRectifiedLabel EightConnected
 $maxBlobIndex = BlobAnalysisArray LicensePlateRectifiedLabel &$tab SortDown TopLeft UseX Height TopLeft Width
 if $maxBlobIndex !== 5 then //Check if 5 characters were found

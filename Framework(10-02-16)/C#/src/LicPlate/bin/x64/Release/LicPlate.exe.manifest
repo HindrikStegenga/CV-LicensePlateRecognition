@@ -48,7 +48,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>uOKyi6Xgz9lzJ5p1JwYFpEwsy9cfO5O2rAaY+dpJfx0=</dsig:DigestValue>
+        <dsig:DigestValue>8fl1I7hk906LfA6+zdiqDF+WwHwRJYz833//TYA04lo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -58,7 +58,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>wf8lTw9BeDH7UdKiEw+WMfbGRh/EtDXuZnqzyUyU/YY=</dsig:DigestValue>
+      <dsig:DigestValue>vsAwmYGJBsIQCpu6cuJR6WXMcIaThmvI6OIIt+wz3pA=</dsig:DigestValue>
     </hash>
   </file>
   <file name="LicPlate.exe.config" size="144">

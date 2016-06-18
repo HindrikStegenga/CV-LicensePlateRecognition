@@ -20,6 +20,7 @@ endif
 
 //Find corner points of the licenseplate
 FindCornersRectangle LicensePlateBin EightConnected 0.5 Landscape &$tab
+//FindCornersRectangleSq LicensePlateBin EightConnected &$tab
 $found = warpcoordsvalid $tab[0] $tab[1] $tab[2] $tab[3]
 if $found then
   //Warp (rectify) licenseplate
@@ -37,6 +38,7 @@ if $found then
   RemoveborderBlobs BinaryCharacterImage EightConnected AllBorders
   //Remove all blobs with an area less than 400
   RemoveBlobs BinaryCharacterImage EightConnected Area 1 400 UseX
+  
   
   if $ServerScript === false
     display BinaryCharacterImage
