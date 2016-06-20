@@ -22,17 +22,20 @@ FastRGBToHSV OriginalImage OriginalImage
 //***********************************//
 
 //Threshold HSV
-//ThresholdHSVchannels OriginalImage LicensePlateBin Int32Image 21 50 100 255 100 255
-ThresholdHSVchannels OriginalImage LicensePlateBin Int32Image 14 50 100 255 46 255
 
+ThresholdHSVchannels OriginalImage LicensePlateBin Int32Image 14 50 100 255 46 255
 LabelBlobs LicensePlateBin EightConnected
-display LicensePlateBin
-break
- RemoveBlobs LicensePlateBin EightConnected LengthBreadthRatio 0 2.50 UseX
- RemoveBlobs LicensePlateBin EightConnected LengthBreadthRatio 8.00 9999 UseX
-break
-//Remove small blobs
+
+//display LicensePlateBin
+//break
+
 RemoveBlobs LicensePlateBin EightConnected Area 1 3000 UseX
+RemoveBlobs LicensePlateBin EightConnected LengthBreadthRatio 0 2.50 UseX
+RemoveBlobs LicensePlateBin EightConnected LengthBreadthRatio 10.00 9999 UseX
+
+display LicensePlateBin
+//break
+//Remove small blobs
 //Fill up characters
 FillHoles LicensePlateBin EightConnected
 

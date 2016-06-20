@@ -20,7 +20,6 @@ endif
 
 //Find corner points of the licenseplate
 FindCornersRectangle LicensePlateBin EightConnected 0.5 Landscape &$tab
-//FindCornersRectangleSq LicensePlateBin EightConnected &$tab
 $found = warpcoordsvalid $tab[0] $tab[1] $tab[2] $tab[3]
 if $found then
   //Warp (rectify) licenseplate
@@ -30,15 +29,18 @@ if $found then
   //*** Exercise: Find license plate characters **//
   //**********************************************//  
   Convert BinaryCharacterImage BinaryCharacterImage Int32Image
+  display BinaryCharacterImage
+  break
   //Automatic threshold finds black letters
   ThresholdIsodata BinaryCharacterImage DarkObject  
+		
+
   //Remove small blobs + noise
   Opening BinaryCharacterImage BinaryCharacterImage 5 1 0 2 1 1 1 1 1 
   //Remove all blobs connected to the border
   RemoveborderBlobs BinaryCharacterImage EightConnected AllBorders
   //Remove all blobs with an area less than 400
   RemoveBlobs BinaryCharacterImage EightConnected Area 1 400 UseX
-  
   
   if $ServerScript === false
     display BinaryCharacterImage
@@ -48,6 +50,39 @@ if $found then
   endif
   return true
 else
+	
+	FindCornersRectangleSq LicensePlateBin EightConnected &$tab
+	$found = warpcoordsvalid $tab[0] $tab[1] $tab[2] $tab[3]
+	if $found then	
+		//Warp (rectify) licenseplate
+  Warp OriginalImage BinaryCharacterImage ForwardT $tab[0] $tab[1] $tab[2] $tab[3] 100 470 0 NearestPixelInterpolation
+  
+  //**********************************************//
+  //*** Exercise: Find license plate characters **//
+  //**********************************************//  
+  Convert BinaryCharacterImage BinaryCharacterImage Int32Image
+    display BinaryCharacterImage
+  break
+  //Automatic threshold finds black letters
+  ThresholdIsodata BinaryCharacterImage DarkObject  
+
+  //Remove small blobs + noise
+  Opening BinaryCharacterImage BinaryCharacterImage 5 1 0 2 1 1 1 1 1 
+  //Remove all blobs connected to the border
+  RemoveborderBlobs BinaryCharacterImage EightConnected AllBorders
+  //Remove all blobs with an area less than 400
+  RemoveBlobs BinaryCharacterImage EightConnected Area 1 400 UseX
+  
+  if $ServerScript === false
+    display BinaryCharacterImage
+  else
+    //Copy result image back to C#
+    copy BinaryCharacterImage %p3
+  endif
+  return true
+	else
+	return false
+
   return false
 endif
 
