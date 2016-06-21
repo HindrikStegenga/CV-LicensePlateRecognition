@@ -34,7 +34,7 @@ break
 break
 //Remove small blobs
 RemoveBlobs LicensePlateBin EightConnected Area 1 1000 UseX
-RemoveBlobs LicensePlateBin EightConnected Area 80000 100000 UseX
+//RemoveBlobs LicensePlateBin EightConnected Area 80000 100000 UseX
 //Fill up characters
 FillHoles LicensePlateBin EightConnected
 
