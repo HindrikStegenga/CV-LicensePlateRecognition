@@ -212,7 +212,15 @@ namespace LicPlate
                 returnBlobs.Dispose();
                 match.Dispose();
                 bestWord.Dispose();
-                return true;
+                //bool[] types = new bool[6];
+                //for (int i = 0; i < 6; i++)
+                //    types[i] = '0' <= lexiconResult.characters[i].character[0] && lexiconResult.characters[i].character[0] <= '9'; 
+                //if(types[0] && types[1] && !types[2] && !types[3] && !types[4] && !types[5]) return true;
+                //if (!types[0] && !types[1] && types[2] && types[3] && !types[4] && !types[5]) return true;
+                //if (!types[0] && !types[1] && !types[2] && !types[3] && types[4] && types[5]) return true;
+                //if (types[0] && !types[1] && !types[2] && !types[3] && types[4] && types[5]) return true;
+                //if (types[0] && types[1] && !types[2] && !types[3] && !types[4] && types[5]) return true;
+                return false;
             }
             catch (System.Exception ex)
             {

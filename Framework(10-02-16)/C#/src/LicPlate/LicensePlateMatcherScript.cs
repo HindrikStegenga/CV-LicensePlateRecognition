@@ -147,7 +147,15 @@ namespace LicPlate
                     {
                         result.characters.Add(new LicenseCharacter(plateResultChars[c].ToString(), double.Parse(plateResult[2 + c], CultureInfo.InvariantCulture), result.confidence));
                     }
-                    return true;
+                    bool[] types = new bool[6];
+                    for (int i = 0; i < 6; i++)
+                        types[i] = '0' <= result.characters[i].character[0] && result.characters[i].character[0] <= '9';
+                    if (types[0] && types[1] && !types[2] && !types[3] && !types[4] && !types[5]) return true;
+                    if (!types[0] && !types[1] && types[2] && types[3] && !types[4] && !types[5]) return true;
+                    if (!types[0] && !types[1] && !types[2] && !types[3] && types[4] && types[5]) return true;
+                    if (types[0] && !types[1] && !types[2] && !types[3] && types[4] && types[5]) return true;
+                    if (types[0] && types[1] && !types[2] && !types[3] && !types[4] && types[5]) return true;
+                    return false;
                 }
                 else
                     return false;
