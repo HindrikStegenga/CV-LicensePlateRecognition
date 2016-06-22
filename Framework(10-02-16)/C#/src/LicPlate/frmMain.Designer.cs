@@ -388,7 +388,7 @@
             this.nupConfidence.Size = new System.Drawing.Size(80, 20);
             this.nupConfidence.TabIndex = 36;
             this.nupConfidence.Value = new decimal(new int[] {
-            35,
+            23,
             0,
             0,
             0});
@@ -813,8 +813,6 @@
             // chkUseScripts
             // 
             this.chkUseScripts.AutoSize = true;
-            this.chkUseScripts.Checked = true;
-            this.chkUseScripts.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkUseScripts.Location = new System.Drawing.Point(558, 332);
             this.chkUseScripts.Name = "chkUseScripts";
             this.chkUseScripts.Size = new System.Drawing.Size(80, 17);

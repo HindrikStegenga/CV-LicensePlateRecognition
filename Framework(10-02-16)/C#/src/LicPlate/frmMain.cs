@@ -454,6 +454,7 @@ namespace LicPlate
                     btnProcess.Text = "Stop";
                     Application.DoEvents();
 
+                    
                     btnProcess.Tag = "started";
                     lstLowConfidence.Items.Clear();                    
                     lstMatched.Items.Clear();
@@ -469,16 +470,62 @@ namespace LicPlate
                     lblMatchPlateErrCount.Text = "0";
                     lblErrorsCount.Text = "0";
 
+
                     foreach (String fn in lbMatchList.Items)
                     {
                         GC.AddMemoryPressure(1 * 1024 * 1024 * 1024); //1 GB
-                        MatchImage(fn,true, chkUseScripts.Checked);
+                        MatchImage(fn, true, chkUseScripts.Checked);
                         lblScore.Text = Convert.ToString(Convert.ToInt32(lblMatchedCount.Text) + Convert.ToInt32(lblLexiconCount.Text) - (10 * Convert.ToInt32(lblErrorsCount.Text)));
                         GC.RemoveMemoryPressure(1 * 1024 * 1024 * 1024); //1 GB
                         Application.DoEvents();
                         if (btnProcess.Tag.ToString() == "stop")
                             break;
                     }
+
+
+                    /*
+                    int HighestScore = 0;
+                    int bestConf = 99999;
+
+                    for (int i = 0; i < 40; ++i)
+                    {
+                        nupConfidence.Value = i;
+                        foreach (String fn in lbMatchList.Items)
+                        {
+                            GC.AddMemoryPressure(1 * 1024 * 1024 * 1024); //1 GB
+                            MatchImage(fn, true, chkUseScripts.Checked);
+                            lblScore.Text = Convert.ToString(Convert.ToInt32(lblMatchedCount.Text) + Convert.ToInt32(lblLexiconCount.Text) - (10 * Convert.ToInt32(lblErrorsCount.Text)));
+                            GC.RemoveMemoryPressure(1 * 1024 * 1024 * 1024); //1 GB
+                            Application.DoEvents();
+                            if (btnProcess.Tag.ToString() == "stop")
+                                break;
+                        }
+                        if (Convert.ToInt32(lblScore.Text) > HighestScore)
+                        {
+                            HighestScore = Convert.ToInt32(lblScore.Text);
+                            bestConf = i;
+                        }
+
+                        btnProcess.Tag = "started";
+                        lstLowConfidence.Items.Clear();
+                        lstMatched.Items.Clear();
+                        lstLexicon.Items.Clear();
+                        lstRectifyPlateErr.Items.Clear();
+                        lstMatchPlateErr.Items.Clear();
+                        lstFindPlateErr.Items.Clear();
+                        lstErrors.Items.Clear();
+                        lblLowConfidenceCount.Text = "0";
+                        lblFindPlateErrCount.Text = "0";
+                        lblMatchedCount.Text = "0";
+                        lblLexiconCount.Text = "0";
+                        lblMatchPlateErrCount.Text = "0";
+                        lblErrorsCount.Text = "0";
+
+                    }
+                    MessageBox.Show(bestConf.ToString());
+                    */
+
+
                     btnProcess.Tag = "stop";
                     btnProcess.Text = "Process";
                 }
