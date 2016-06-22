@@ -38,6 +38,8 @@ RemoveBlobs LicensePlateBin EightConnected Area 1 1000 UseX
 //Fill up characters
 FillHoles LicensePlateBin EightConnected
 
+//RemoveBlobs LicensePlateBin EightConnected PolygonVertices 6 999999 UseX
+
 if $ServerScript === false
   display LicensePlateBin
 else

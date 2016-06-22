@@ -104,3 +104,18 @@ C:\Users\User\Desktop\Fixed\licplates26Jan16\C#\src\LicPlate\obj\x64\Release\Lic
 C:\Users\Jeffrey Rozendaal\Dropbox\school\Informatica (HBO)\Computer vision 1\files\Framework (10-02-16) (2)\C#\src\LicPlate\bin\x64\Release\LicPlate.exe.config
 C:\Users\Jeffrey Rozendaal\Dropbox\school\Informatica (HBO)\Computer vision 1\files\Framework (10-02-16) (2)\C#\src\LicPlate\obj\x64\Release\LicPlate.exe
 C:\Users\Jeffrey Rozendaal\Dropbox\school\Informatica (HBO)\Computer vision 1\files\Framework (10-02-16) (2)\C#\src\LicPlate\obj\x64\Release\LicPlate.pdb
+C:\Users\Hindrik\Documents\Repositories\ComputerVisionLisencePlate\Framework(10-02-16)\C#\src\LicPlate\bin\x64\Release\LicPlate.exe.config
+C:\Users\Hindrik\Documents\Repositories\ComputerVisionLisencePlate\Framework(10-02-16)\C#\src\LicPlate\obj\x64\Release\LicPlate.exe
+C:\Users\Hindrik\Documents\Repositories\ComputerVisionLisencePlate\Framework(10-02-16)\C#\src\LicPlate\obj\x64\Release\LicPlate.pdb
+C:\Users\Hindrik\Documents\Repositories\ComputerVisionLisencePlate\Framework(10-02-16)\C#\src\LicPlate\bin\x64\Release\license_visionlab.txt
+C:\Users\Hindrik\Documents\Repositories\ComputerVisionLisencePlate\Framework(10-02-16)\C#\src\LicPlate\bin\x64\Release\LicPlate.exe.manifest
+C:\Users\Hindrik\Documents\Repositories\ComputerVisionLisencePlate\Framework(10-02-16)\C#\src\LicPlate\bin\x64\Release\LicPlate.application
+C:\Users\Hindrik\Documents\Repositories\ComputerVisionLisencePlate\Framework(10-02-16)\C#\src\LicPlate\bin\x64\Release\LicPlate.exe
+C:\Users\Hindrik\Documents\Repositories\ComputerVisionLisencePlate\Framework(10-02-16)\C#\src\LicPlate\bin\x64\Release\LicPlate.pdb
+C:\Users\Hindrik\Documents\Repositories\ComputerVisionLisencePlate\Framework(10-02-16)\C#\src\LicPlate\obj\x64\Release\LicPlate.csprojResolveAssemblyReference.cache
+C:\Users\Hindrik\Documents\Repositories\ComputerVisionLisencePlate\Framework(10-02-16)\C#\src\LicPlate\obj\x64\Release\LicPlate.frmMain.resources
+C:\Users\Hindrik\Documents\Repositories\ComputerVisionLisencePlate\Framework(10-02-16)\C#\src\LicPlate\obj\x64\Release\LicPlate.Properties.Resources.resources
+C:\Users\Hindrik\Documents\Repositories\ComputerVisionLisencePlate\Framework(10-02-16)\C#\src\LicPlate\obj\x64\Release\LicPlate.csproj.GenerateResource.Cache
+C:\Users\Hindrik\Documents\Repositories\ComputerVisionLisencePlate\Framework(10-02-16)\C#\src\LicPlate\obj\x64\Release\LicPlate.TrustInfo.xml
+C:\Users\Hindrik\Documents\Repositories\ComputerVisionLisencePlate\Framework(10-02-16)\C#\src\LicPlate\obj\x64\Release\LicPlate.exe.manifest
+C:\Users\Hindrik\Documents\Repositories\ComputerVisionLisencePlate\Framework(10-02-16)\C#\src\LicPlate\obj\x64\Release\LicPlate.application
