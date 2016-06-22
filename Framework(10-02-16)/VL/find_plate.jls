@@ -22,22 +22,23 @@ FastRGBToHSV OriginalImage OriginalImage
 //***********************************//
 
 //Threshold HSV
-
+//ThresholdHSVchannels OriginalImage LicensePlateBin Int32Image 21 50 100 255 100 255
 ThresholdHSVchannels OriginalImage LicensePlateBin Int32Image 14 50 100 255 46 255
+
 LabelBlobs LicensePlateBin EightConnected
-
-//display LicensePlateBin
-//break
-
-RemoveBlobs LicensePlateBin EightConnected Area 1 3000 UseX
-RemoveBlobs LicensePlateBin EightConnected LengthBreadthRatio 0 2.50 UseX
-RemoveBlobs LicensePlateBin EightConnected LengthBreadthRatio 10.00 9999 UseX
-
 display LicensePlateBin
-//break
+break
+ RemoveBlobs LicensePlateBin EightConnected LengthBreadthRatio 0 2.5 UseX
+ RemoveBlobs LicensePlateBin EightConnected LengthBreadthRatio 10.00 9999 UseX
+
+break
 //Remove small blobs
+RemoveBlobs LicensePlateBin EightConnected Area 1 1000 UseX
+//RemoveBlobs LicensePlateBin EightConnected Area 80000 100000 UseX
 //Fill up characters
 FillHoles LicensePlateBin EightConnected
+
+//RemoveBlobs LicensePlateBin EightConnected PolygonVertices 6 999999 UseX
 
 if $ServerScript === false
   display LicensePlateBin

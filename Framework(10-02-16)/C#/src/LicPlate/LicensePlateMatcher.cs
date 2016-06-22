@@ -24,14 +24,12 @@ namespace LicPlate
             try
             {
                 //Constants
-                const int c_threshold_h_min = 21;
+                const int c_threshold_h_min = 14;
                 const int c_threshold_h_max = 50;
                 const int c_threshold_s_min = 100;
                 const int c_threshold_s_max = 255;
-                const int c_threshold_v_min = 100;
+                const int c_threshold_v_min = 46;
                 const int c_threshold_v_max = 255;
-                const int c_remove_blobs_min = 1;
-                const int c_remove_blobs_max = 5000;
 
                 //*******************************//
                 //** Exercise:                 **//
@@ -47,11 +45,18 @@ namespace LicPlate
                 //Threshold HSV image
                 VisionLab.Threshold3Channels(plateImageHSV, binaryPlateImage, c_threshold_h_min, c_threshold_h_max, c_threshold_s_min, c_threshold_s_max, c_threshold_v_min, c_threshold_v_max);
 
+
+                VisionLab.LabelBlobs(binaryPlateImage, Connected.EightConnected);
+
+                VisionLab.RemoveBlobs(binaryPlateImage, Connected.EightConnected, BlobAnalyse.BA_LengthBreadthRatio, 0.0, 2.50);
+                VisionLab.RemoveBlobs(binaryPlateImage, Connected.EightConnected, BlobAnalyse.BA_LengthBreadthRatio, 10.0, 9999.0);
+
                 //Remove blobs with small areas
-                VisionLab.RemoveBlobs(binaryPlateImage, Connected.EightConnected, BlobAnalyse.BA_Area, c_remove_blobs_min, c_remove_blobs_max);
+                VisionLab.RemoveBlobs(binaryPlateImage, Connected.EightConnected, BlobAnalyse.BA_Area, 1, 1000, UseXOrY.UseX);
+                //VisionLab.RemoveBlobs(binaryPlateImage, Connected.EightConnected, BlobAnalyse.BA_Area, 80000, 120000);
 
                 //Fill up characters
-                VisionLab.FillHoles(binaryPlateImage, Connected.FourConnected);
+                VisionLab.FillHoles(binaryPlateImage, Connected.EightConnected);
 
                 plateImageHSV.Dispose();
                 //Return true, if pixels found
@@ -100,7 +105,13 @@ namespace LicPlate
                 //Find licenseplate
                 VisionLab.FindCornersRectangle(binaryPlateImage, Connected.EightConnected, 0.5, Orientation.Landscape, leftTop, rightTop, leftBottom, rightBottom);
                 if (!VisionLab.WarpCoordsValid(new Coord2D(leftTop), new Coord2D(rightTop), new Coord2D(leftBottom), new Coord2D(rightBottom)))
-                    return false;
+                {
+                    VisionLab.FindCornersRectangleSq(binaryPlateImage, Connected.EightConnected, leftTop, rightTop, leftBottom, rightBottom);
+                    if (!VisionLab.WarpCoordsValid(new Coord2D(leftTop), new Coord2D(rightTop), new Coord2D(leftBottom), new Coord2D(rightBottom)))
+                    {
+                        return false;
+                    }
+                }
 
                 Int32Image plateImageGray = new Int32Image();
                 VisionLab.Convert(plateImage, plateImageGray);
@@ -116,6 +127,7 @@ namespace LicPlate
                 //**   adjust licenseplate     **//
                 //**   segmentation            **//
                 //*******************************//
+
 
                 //Find dark text on bright licenseplate using ThresholdISOData
                 VisionLab.ThresholdIsoData(binaryCharacterImage, ObjectBrightness.DarkObject);
@@ -212,7 +224,16 @@ namespace LicPlate
                 returnBlobs.Dispose();
                 match.Dispose();
                 bestWord.Dispose();
-                return true;
+
+                bool[] types = new bool[6];
+                for (int i = 0; i < 6; i++)
+                    types[i] = '0' <= result.characters[i].character[0] && result.characters[i].character[0] <= '9';
+                if (types[0] && types[1] && !types[2] && !types[3] && !types[4] && !types[5]) return true;
+                if (!types[0] && !types[1] && types[2] && types[3] && !types[4] && !types[5]) return true;
+                if (!types[0] && !types[1] && !types[2] && !types[3] && types[4] && types[5]) return true;
+                if (types[0] && !types[1] && !types[2] && !types[3] && types[4] && types[5]) return true;
+                if (types[0] && types[1] && !types[2] && !types[3] && !types[4] && types[5]) return true;
+                return false;
             }
             catch (System.Exception ex)
             {

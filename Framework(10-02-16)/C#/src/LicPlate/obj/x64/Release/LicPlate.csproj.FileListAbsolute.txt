@@ -101,6 +101,9 @@ C:\Users\User\Desktop\Fixed\licplates26Jan16\C#\src\LicPlate\obj\x64\Release\Lic
 \\141.252.12.106\private_shared\Course\LicensePlate\2015_2016\licplates10Feb16\C#\src\LicPlate\bin\x64\Release\LicPlate.exe.config
 \\141.252.12.106\private_shared\Course\LicensePlate\2015_2016\licplates10Feb16\C#\src\LicPlate\obj\x64\Release\LicPlate.exe
 \\141.252.12.106\private_shared\Course\LicensePlate\2015_2016\licplates10Feb16\C#\src\LicPlate\obj\x64\Release\LicPlate.pdb
+C:\Users\Jeffrey Rozendaal\Dropbox\school\Informatica (HBO)\Computer vision 1\files\Framework (10-02-16) (2)\C#\src\LicPlate\bin\x64\Release\LicPlate.exe.config
+C:\Users\Jeffrey Rozendaal\Dropbox\school\Informatica (HBO)\Computer vision 1\files\Framework (10-02-16) (2)\C#\src\LicPlate\obj\x64\Release\LicPlate.exe
+C:\Users\Jeffrey Rozendaal\Dropbox\school\Informatica (HBO)\Computer vision 1\files\Framework (10-02-16) (2)\C#\src\LicPlate\obj\x64\Release\LicPlate.pdb
 C:\Users\Hindrik\Documents\Repositories\ComputerVisionLisencePlate\Framework(10-02-16)\C#\src\LicPlate\bin\x64\Release\LicPlate.exe.config
 C:\Users\Hindrik\Documents\Repositories\ComputerVisionLisencePlate\Framework(10-02-16)\C#\src\LicPlate\obj\x64\Release\LicPlate.exe
 C:\Users\Hindrik\Documents\Repositories\ComputerVisionLisencePlate\Framework(10-02-16)\C#\src\LicPlate\obj\x64\Release\LicPlate.pdb

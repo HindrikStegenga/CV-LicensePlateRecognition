@@ -41,14 +41,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LicPlate.exe" size="1632256">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LicPlate.exe" size="1632768">
       <assemblyIdentity name="LicPlate" version="1.0.0.0" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>WN/gRN4jDxAXHbphvYbQY3iR07zB2P8sQ69hhm/11ow=</dsig:DigestValue>
+        <dsig:DigestValue>TSGbzFjWlkYoM0ybY2felUqpiV9vLXpsryk0qJ3iB4k=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
