@@ -119,3 +119,6 @@ C:\Users\Hindrik\Documents\Repositories\ComputerVisionLisencePlate\Framework(10-
 C:\Users\Hindrik\Documents\Repositories\ComputerVisionLisencePlate\Framework(10-02-16)\C#\src\LicPlate\obj\x64\Release\LicPlate.TrustInfo.xml
 C:\Users\Hindrik\Documents\Repositories\ComputerVisionLisencePlate\Framework(10-02-16)\C#\src\LicPlate\obj\x64\Release\LicPlate.exe.manifest
 C:\Users\Hindrik\Documents\Repositories\ComputerVisionLisencePlate\Framework(10-02-16)\C#\src\LicPlate\obj\x64\Release\LicPlate.application
+D:\Framework(10-02-16)\C#\src\LicPlate\bin\x64\Release\LicPlate.exe.config
+D:\Framework(10-02-16)\C#\src\LicPlate\obj\x64\Release\LicPlate.exe
+D:\Framework(10-02-16)\C#\src\LicPlate\obj\x64\Release\LicPlate.pdb

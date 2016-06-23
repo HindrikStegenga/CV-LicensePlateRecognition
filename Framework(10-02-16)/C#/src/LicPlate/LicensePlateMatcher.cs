@@ -94,7 +94,7 @@ namespace LicPlate
                 const int c_height = 100;
                 const int c_width = 470;
                 const int c_remove_blobs_min = 1;
-                const int c_remove_blobs_max = 400;
+                const int c_remove_blobs_max = 450;
 
                 XYCoord leftTop = new XYCoord();
                 XYCoord rightTop = new XYCoord();
